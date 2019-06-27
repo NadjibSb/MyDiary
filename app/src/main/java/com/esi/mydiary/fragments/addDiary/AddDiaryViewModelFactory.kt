@@ -1,4 +1,4 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.addDiary
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
@@ -6,15 +6,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.esi.mydiary.db.DiaryDatabseDAO
 import java.lang.IllegalArgumentException
 
-class HomeViewModelFactory(
+class AddDiaryViewModelFactory(
     private val datasource: DiaryDatabseDAO,
     private val application: Application
-) : ViewModelProvider.Factory {
+): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-
-            return HomeViewModel(datasource,application) as T
+        if (modelClass.isAssignableFrom(AddDiaryViewModel::class.java)){
+            return AddDiaryViewModel(datasource, application) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel Class")
+        throw IllegalArgumentException("unknown ViewModel class")
     }
 }

@@ -1,4 +1,4 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.esi.mydiary.db.Diary
 import com.esi.mydiary.R
+import com.esi.mydiary.convertLongToDateString
 
 const val KEY="ID"
 
@@ -50,10 +51,13 @@ class ItemAdapter(val list: List<Diary>) : RecyclerView.Adapter<ItemAdapter.View
 
         fun bind(diary: Diary) {
             title.text = diary.title
-            date.text = diary.date.toString()
+            date.text = convertLongToDateString(diary.date)
             icon.setImageResource(R.drawable.ic_image)
             container.setOnClickListener { v ->
-                val action = HomeFragmentDirections.actionHomeFragmentToDiaryDetailsFragment(diary.pk)
+                val action =
+                    HomeFragmentDirections.actionHomeFragmentToDiaryDetailsFragment(
+                        diary.pk
+                    )
                 Navigation.findNavController(v).navigate(action)
             }
         }

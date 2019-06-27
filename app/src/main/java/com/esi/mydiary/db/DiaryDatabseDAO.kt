@@ -1,6 +1,7 @@
 package com.esi.mydiary.db
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 @Dao
@@ -12,7 +13,7 @@ interface DiaryDatabseDAO {
     fun update(diary: Diary)
 
     @Query("SELECT * FROM Dairies_table ORDER BY date DESC")
-    fun getDiaries(): List<Diary>
+    fun getDiaries(): LiveData<List<Diary>>
 
     @Query("SELECT * FROM Dairies_table WHERE pk = :id")
     fun getDiary(id: Int): Diary

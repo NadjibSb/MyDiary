@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/homeFragment"
-            android:name="com.esi.mydiary.fragments.HomeFragment"
+            android:name="com.esi.mydiary.fragments.home.HomeFragment"
             android:label="Home"
             tools:layout="@layout/home_fragment">
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
             android:id="@+id/addDiaryFragment"
-            android:name="com.esi.mydiary.fragments.AddDiaryFragment"
+            android:name="com.esi.mydiary.fragments.addDiary.AddDiaryFragment"
             android:label="Add Dairy"
             tools:layout="@layout/add_diary_fragment"/>
     <fragment
             android:id="@+id/diaryDetailsFragment"
-            android:name="com.esi.mydiary.fragments.DiaryDetailsFragment"
+            android:name="com.esi.mydiary.fragments.diaryDetails.DiaryDetailsFragment"
             android:label="Diary"
             tools:layout="@layout/diary_details_fragment">
         <argument android:name="diaryID" app:argType="integer"/>

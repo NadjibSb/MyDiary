@@ -1,8 +1,10 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.home
 
 import android.app.Application
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;
+import com.esi.mydiary.R
 import com.esi.mydiary.db.Diary
 import com.esi.mydiary.db.DiaryDatabseDAO
 import kotlinx.coroutines.*
@@ -10,7 +12,6 @@ import kotlinx.coroutines.*
 class HomeViewModel(
     val datasource: DiaryDatabseDAO,
     application: Application) : ViewModel() {
-    // TODO: Implement the ViewModel
 
     private val job = Job()
 
@@ -21,16 +22,16 @@ class HomeViewModel(
 
     private val uiScope = CoroutineScope(Dispatchers.Main + job)
     private var dairy = MutableLiveData<Diary>()
-    var dairies = MutableLiveData<List<Diary>>()
+    var dairies = datasource.getDiaries()
 
     init {
         //firstInsert()
         uiScope.launch {
-            dairies.value = getAllDairies()
+            //dairies = getAllDairies()
         }
     }
 
-    private suspend fun getAllDairies(): List<Diary>? {
+    private suspend fun getAllDairies(): LiveData<List<Diary>> {
         return withContext(Dispatchers.IO){
             datasource.getDiaries()
         }
@@ -41,7 +42,7 @@ class HomeViewModel(
             for (i in 1..10){
                 val diary = Diary(
                     title = "Title $i",
-                    img = "",
+                    img = R.drawable.ic_image,
                     content = "This is just an example. This is just an example. This is just an example. This is just an example. This is just an example. This is just an example. "
                 )
                 insert(diary)

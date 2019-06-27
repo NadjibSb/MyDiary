@@ -8,7 +8,7 @@ data class Diary(
     @PrimaryKey(autoGenerate = true)
     var pk: Int = 0,
     var title: String,
-    var img: String,
+    var img: Int,
     var content: String,
     var date: Long = System.currentTimeMillis()
 ) {

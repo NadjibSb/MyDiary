@@ -1,4 +1,4 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.diaryDetails
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData

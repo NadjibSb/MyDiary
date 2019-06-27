@@ -1,4 +1,4 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.diaryDetails
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import com.esi.mydiary.R
 import com.esi.mydiary.databinding.DiaryDetailsFragmentBinding
 import com.esi.mydiary.db.DiaryDatabase
-import com.esi.mydiary.db.DiaryDatabseDAO
+import com.esi.mydiary.convertLongToDateString
 
 class DiaryDetailsFragment : Fragment() {
 
@@ -39,14 +39,15 @@ class DiaryDetailsFragment : Fragment() {
 
         val application = requireNotNull(activity).application
         val datasource = DiaryDatabase.getInstance(application).diaryDatabseDAO
-        val factory = DiaryDetailsViewModelFactory(args.diaryID, datasource,application)
+        val factory =
+            DiaryDetailsViewModelFactory(args.diaryID, datasource, application)
         viewModel = ViewModelProviders.of(this,factory).get(DiaryDetailsViewModel::class.java)
         binding.viewModel = viewModel
 
         viewModel.dairy.observe(this, Observer { diary->
             binding.apply {
                 title.text = diary.title
-                date.text = diary.date.toString()
+                date.text = convertLongToDateString(diary.date)
                 content.text = diary.content
             }
         })

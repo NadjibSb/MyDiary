@@ -1,4 +1,4 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.diaryDetails
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
@@ -13,7 +13,7 @@ class DiaryDetailsViewModelFactory(
 ): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DiaryDetailsViewModel::class.java)){
-            return DiaryDetailsViewModel(diaryID,datasource,application) as T
+            return DiaryDetailsViewModel(diaryID, datasource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

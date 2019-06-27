@@ -1,8 +1,7 @@
-package com.esi.mydiary.fragments
+package com.esi.mydiary.fragments.home
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -36,14 +35,15 @@ class HomeFragment : Fragment() {
 
         val application = requireNotNull(activity).application
         val dataSource = DiaryDatabase.getInstance(application).diaryDatabseDAO
-        val factory = HomeViewModelFactory(dataSource,application)
+        val factory = HomeViewModelFactory(dataSource, application)
         viewModel = ViewModelProviders.of(this,factory).get(HomeViewModel::class.java)
 
 
 
 
         binding.addBtn.setOnClickListener { view ->
-            val action = HomeFragmentDirections.actionHomeFragmentToAddDiaryFragment()
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToAddDiaryFragment()
             Navigation.findNavController(view).navigate(action)
         }
         viewModel.dairies.observe(this, Observer { list->
@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
                 Diary(
                     i,
                     "Title $i",
-                    "",
+                    R.id.icon_img,
                     "This is just an example. This is just an example. This is just an example. This is just an example. This is just an example. This is just an example. "
                 )
             )

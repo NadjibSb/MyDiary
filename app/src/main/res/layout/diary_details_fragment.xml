@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="viewModel" type="com.esi.mydiary.fragments.DiaryDetailsViewModel"/>
+        <variable name="viewModel" type="com.esi.mydiary.fragments.diaryDetails.DiaryDetailsViewModel"/>
     </data>
     <ScrollView
             android:layout_width="match_parent"
@@ -10,7 +10,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".fragments.DiaryDetailsFragment">
+                tools:context=".fragments.diaryDetails.DiaryDetailsFragment">
             <TextView
                     android:id="@+id/title"
                     android:text="Title"
