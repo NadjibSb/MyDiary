@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".fragments.AddDiaryFragment">
+
+            <ImageView
+                    android:src="@drawable/ic_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/image"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                    android:id="@+id/title_txt"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title :"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/image"/>
+            <EditText
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:hint="Title"
+                    android:inputType="textEmailSubject"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/title_txt" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp"/>
+            <TextView
+                    android:id="@+id/date_txt"
+                    android:text="Date :"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/title" android:layout_marginStart="24dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/date" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/date_txt" android:layout_marginStart="24dp"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp" app:layout_constraintHorizontal_bias="0.0"/>
+            <TextView
+                    android:id="@+id/content_txt"
+                    android:text="Content :"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/date" android:layout_marginStart="24dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            <EditText
+                    android:id="@+id/content"
+                    android:hint="Diary content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:gravity="start|top"
+                    android:ems="10"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/content_txt" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp"/>
+            <Button
+                    android:id="@+id/add_btn"
+                    android:text="Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/content" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp" android:layout_marginBottom="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

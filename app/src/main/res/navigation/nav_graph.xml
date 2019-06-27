@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/homeFragment">
+
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.esi.mydiary.fragments.HomeFragment"
+            android:label="Home"
+            tools:layout="@layout/home_fragment">
+        <action
+                android:id="@+id/action_homeFragment_to_diaryDetailsFragment"
+                app:destination="@id/diaryDetailsFragment" app:popUpTo="@+id/homeFragment"/>
+        <action
+                android:id="@+id/action_homeFragment_to_addDiaryFragment"
+                app:destination="@id/addDiaryFragment" app:popUpTo="@+id/homeFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/addDiaryFragment"
+            android:name="com.esi.mydiary.fragments.AddDiaryFragment"
+            android:label="Add Dairy"
+            tools:layout="@layout/add_diary_fragment"/>
+    <fragment
+            android:id="@+id/diaryDetailsFragment"
+            android:name="com.esi.mydiary.fragments.DiaryDetailsFragment"
+            android:label="Diary"
+            tools:layout="@layout/diary_details_fragment">
+        <argument android:name="diaryID" app:argType="integer"/>
+    </fragment>
+</navigation>
