@@ -1,15 +1,13 @@
 package com.esi.mydiary.fragments.addDiary
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 import com.esi.mydiary.db.Diary
 import com.esi.mydiary.db.DiaryDatabseDAO
 import kotlinx.coroutines.*
 
 class AddDiaryViewModel(
-    private val datasource: DiaryDatabseDAO,
-    application: Application
+    private val datasource: DiaryDatabseDAO
 ) : ViewModel() {
 
     private val job = Job()

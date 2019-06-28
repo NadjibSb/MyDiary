@@ -8,11 +8,10 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.esi.mydiary.db.Diary
 import com.esi.mydiary.R
 import com.esi.mydiary.convertLongToDateString
+import com.esi.mydiary.db.Diary
 
-const val KEY="ID"
 
 class ItemAdapter(val list: List<Diary>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
@@ -29,17 +28,10 @@ class ItemAdapter(val list: List<Diary>) : RecyclerView.Adapter<ItemAdapter.View
 
 
     class ViewHolder private constructor(parent: View) : RecyclerView.ViewHolder(parent) {
-        var title: TextView
-        var date: TextView
-        var icon: ImageView
-        var container: ConstraintLayout
-
-        init {
-            title = parent.findViewById(R.id.title)
-            date = parent.findViewById(R.id.date)
-            icon = parent.findViewById(R.id.icon_img)
-            container = parent.findViewById(R.id.container)
-        }
+        var title: TextView = parent.findViewById(R.id.title)
+        var date: TextView = parent.findViewById(R.id.date)
+        var icon: ImageView = parent.findViewById(R.id.icon_img)
+        var container: ConstraintLayout = parent.findViewById(R.id.container)
 
         companion object {
             fun creat(parent: ViewGroup): ViewHolder {
@@ -62,23 +54,5 @@ class ItemAdapter(val list: List<Diary>) : RecyclerView.Adapter<ItemAdapter.View
             }
         }
     }
-/*
-    fun navigate(mItemSelected: Diary) {
-        val mFragment = HomeFragment.newInstance()
-        val mBundle = Bundle()
-        mBundle.putInt(KEY, mItemSelected.pk)
-        mFragment.arguments = mBundle
-        switchContent(R.id.host_fragment, mFragment)
-    }
-
-    private fun switchContent(id: Int, fragment: Fragment) {
-        if (mContext == null)
-            return
-        if ( is MainActivity) {
-            val mainActivity = mContext as MainActivity
-            mainActivity.switchContent(id, fragment)
-        }
-
-    }*/
 
 }

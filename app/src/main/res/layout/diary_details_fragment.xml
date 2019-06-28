@@ -13,7 +13,7 @@
                 tools:context=".fragments.diaryDetails.DiaryDetailsFragment">
             <TextView
                     android:id="@+id/title"
-                    android:text="Title"
+                    tools:text="Title"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
                     app:layout_constraintStart_toStartOf="parent"/>
             <TextView
                     android:id="@+id/date"
-                    android:text="11-11-2019"
+                    tools:text="11-11-2019"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"/>
             <TextView
                     android:id="@+id/content"
-                    android:text="Here goes the content..."
+                    tools:text="Here goes the content..."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"

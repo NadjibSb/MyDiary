@@ -1,16 +1,14 @@
 package com.esi.mydiary.fragments.diaryDetails
 
-import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 import com.esi.mydiary.db.Diary
 import com.esi.mydiary.db.DiaryDatabseDAO
 import kotlinx.coroutines.*
 
 class DiaryDetailsViewModel(
     val diaryID: Int,
-    val datasource: DiaryDatabseDAO,
-    application: Application
+    val datasource: DiaryDatabseDAO
 ) : ViewModel() {
 
     private val job = Job()
@@ -30,7 +28,7 @@ class DiaryDetailsViewModel(
     }
 
     private suspend fun getDiary(id: Int): Diary? {
-        return withContext(Dispatchers.IO){
+        return withContext(Dispatchers.IO) {
             datasource.getDiary(id)
         }
     }

@@ -26,13 +26,13 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title :"
+                    android:text="@string/title_txt"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/image"/>
             <EditText
                     android:id="@+id/title"
                     android:layout_width="match_parent"
-                    android:hint="Title"
+                    android:hint="@string/title"
                     android:inputType="textEmailSubject"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -42,7 +42,7 @@
 
             <TextView
                     android:id="@+id/content_txt"
-                    android:text="Content :"
+                    android:text="@string/content_txt"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     app:layout_constraintStart_toStartOf="parent"/>
             <EditText
                     android:id="@+id/content"
-                    android:hint="Diary content"
+                    android:hint="@string/diary_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
@@ -63,7 +63,7 @@
                     android:layout_marginEnd="24dp"/>
             <Button
                     android:id="@+id/add_btn"
-                    android:text="Add"
+                    android:text="@string/add_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"

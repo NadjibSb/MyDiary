@@ -35,7 +35,7 @@ class AddDiaryFragment : Fragment() {
 
         val application = requireNotNull(activity).application
         val datasource = DiaryDatabase.getInstance(application).diaryDatabseDAO
-        val factory = AddDiaryViewModelFactory(datasource, application)
+        val factory = AddDiaryViewModelFactory(datasource)
         viewModel = ViewModelProviders.of(this, factory).get(AddDiaryViewModel::class.java)
 
         binding.addBtn.setOnClickListener { btn ->
@@ -46,8 +46,8 @@ class AddDiaryFragment : Fragment() {
                     if (content.text.toString().isEmpty()) {
                         Toast.makeText(context, "Please, Enter the content of your Diary", Toast.LENGTH_SHORT).show()
                     } else {
-                        viewModel.addDiary(title.text.toString(),content.text.toString(),R.drawable.ic_image)
-                        Toast.makeText(context,"Diary successfully added",Toast.LENGTH_SHORT).show()
+                        viewModel.addDiary(title.text.toString(), content.text.toString(), R.drawable.ic_image)
+                        Toast.makeText(context, "Diary successfully added", Toast.LENGTH_SHORT).show()
                         var navController = (requireNotNull(activity) as MainActivity).navController
                         navController.navigateUp()
                     }

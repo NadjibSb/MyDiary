@@ -7,13 +7,12 @@ import com.esi.mydiary.db.DiaryDatabseDAO
 import java.lang.IllegalArgumentException
 
 class HomeViewModelFactory(
-    private val datasource: DiaryDatabseDAO,
-    private val application: Application
+    private val datasource: DiaryDatabseDAO
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
 
-            return HomeViewModel(datasource, application) as T
+            return HomeViewModel(datasource) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }
